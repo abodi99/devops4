@@ -1,0 +1,44 @@
+Assuming 50 simultaneous users:
+◦ What are 90th percentile of the response time for the different operations (add, subtract...)?
+
+Type	Name	90%ile (ms)
+POST	add	62
+POST	divide	53
+POST	multiply	32
+POST	subtract	35
+	Aggregated	46
+
+
+◦ What is the throughput? That is, how many requests/second is performed with this user
+load?
+
+Type	Name	# Requests	Current RPS
+POST	add	904	6.1
+POST	divide	468	4
+POST	multiply	444	2.7
+POST	subtract	448	3.3
+Aggregated	2264	74	0.1
+
+
+• How many simultaneous users can the application handle and still reliably provide responses?
+3000-3300 
+
+• What is the maximum throughput the Calculator application can achieve and still reliably
+provide responses?
+280-300
+
+Also, during the trial period the customer have experienced two different problems:
+1. Sometimes the response time when performing the add operation seemed to be slower than
+usual. It didn’t seem to be related to the number of simultaneous users, but no other clues were
+given. Can you figure out under what circumstances the problem may occur?
+
+the response returns a status code 0 and 
+
+2. The application seemed to crash from time to time. When it happened the application had to be
+restarted and then everything went back to normal. Can you repoduce the problem and inform
+the developers what seems to cause the problem? What part of the application is triggering the
+problem?
+
+Server ran out of resourses 
+
+
